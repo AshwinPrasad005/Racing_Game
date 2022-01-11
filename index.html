@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Racing Game</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+
+<a-scene background="color: #00FFFF">
+    <a-entity id="camera" look-controls camera position="-0.4 -0.1 1.5" wasd-controls></a-entity>
+
+    <a-assets>
+        <a-asset-item id="car" src="./Car/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-entity id="CAR" gltf-model="#car" position="-0.4 -1 0" rotation="0 180 0" scale="0.25 0.25 0.25"></a-entity>
+
+    <a-assets>
+        <a-asset-item id="city" src="./cartoon_lowpoly_small_city_free_pack/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5 0 0 "scale="0.01 0.01 0.01"></a-entity>
+
+</body>
+
+</html>
