@@ -10,20 +10,58 @@
 <body>
 
 <a-scene background="color: #00FFFF">
-    <a-entity id="camera" look-controls camera position="-0.4 -0.1 1.5" wasd-controls></a-entity>
+    <a-entity id="camera" look-controls camera position="-0.1 -0.1 1.5" wasd-controls car-velocity-reader car-direction></a-entity>
 
     <a-assets>
-        <a-asset-item id="car" src="./Car/scene.gltf"></a-asset-item>
+        <a-asset-item id="car" src="./assetsl/Models/GLTF format/raceCarGreen.glb"></a-asset-item>
     </a-assets>
 
-    <a-entity id="CAR" gltf-model="#car" position="-0.4 -1 0" rotation="0 180 0" scale="0.25 0.25 0.25" car-velocity-reader ></a-entity>
+    <a-entity id="CAR" gltf-model="#car" position="-0.4 -1 0" rotation="0 180 0" scale="1 1 1" car-velocity-reader car-direction></a-entity>
 
     <a-assets>
-        <a-asset-item id="city" src="./cartoon_lowpoly_small_city_free_pack/scene.gltf"></a-asset-item>
+        <a-asset-item id="city" src="./assetsl/Models/GLTF format/roadStraight.glb"></a-asset-item>
+        <a-asset-item id="fence" src="./assetsl/Models/GLTF format/fenceStraight.glb"></a-asset-item>
+        <a-asset-item id="start" src="./assetsl/Models/GLTF format/roadStart.glb"></a-asset-item>
     </a-assets>
 
-    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5 0 0 "scale="0.01 0.01 0.01" terrain-rotation-reader></a-entity>
-    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="25 0 0 "scale="0.01 0.01 0.01" ></a-entity>
+    <a-entity id="Start" gltf-model="#start" rotation="0 0 0" position="-1.05 -1.2 1.5 "scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 6 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 10.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 14 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 18.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 22 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 26.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -1.5 "scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -6 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -10.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -14 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -18.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -22 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -26.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -30.5 "scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -34 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -38.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -42 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -46.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -50 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -54.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -58.5 "scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -62 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -66.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -70 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -74.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -78 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-0.4 -1.2 -82.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 -3.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 -3.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 -8.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 -8.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 1.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 1.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 6.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 6.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 11.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 11.5 "scale="5 5 5"></a-entity>
 
 </body>
 

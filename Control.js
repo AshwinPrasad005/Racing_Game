@@ -35,12 +35,12 @@ AFRAME.registerComponent("car-velocity-reader", {
     },
     init: function () {
         window.addEventListener("keydown", (e) => {
-            if(e.key === "ArrowUp") {
+            if(e.key === "ArrowDown") {
                 if (this.data.carSpeed < 0.1) {
                     this.data.carSpeed += 0.1;
                 }
             }
-            if (e.key === "ArrowDown") {
+            if (e.key === "ArrowUp") {
                 if (this.data.carSpeed > -0.1) {
                     this.data.carSpeed -= 0.1;
                 }
@@ -60,33 +60,33 @@ AFRAME.registerComponent("car-velocity-reader", {
     }
 });
 
-// AFRAME.registerComponent("car-direction", {
-//     schema: {
-//         carSpeed: { type: "number", default: 0 },
-//     },
-//     init: function () {
-//         window.addEventListener("keydown", (e) => {
-//             if(e.key === "ArrowRight") {
-//                 if (this.data.carSpeed < 0.1) {
-//                     this.data.carSpeed -= 0.01;
-//                 }
-//             }
-//             if (e.key === "ArrowLeft") {
-//                 if (this.data.carSpeed > -0.1) {
-//                     this.data.carSpeed += 0.01;
-//                 }
-//             }
-//         });
-//     },
-//     tick: function () {
-//         var carVelocity = this.el.getAttribute("rotation");
+AFRAME.registerComponent("car-direction", {
+    schema: {
+        carSpeed: { type: "number", default: 0 },
+    },
+    init: function () {
+        window.addEventListener("keydown", (e) => {
+            if(e.key === "ArrowLeft") {
+                if (this.data.carSpeed < 0.1) {
+                    this.data.carSpeed -= 0.01;
+                }
+            }
+            if (e.key === "ArrowRight") {
+                if (this.data.carSpeed > -0.1) {
+                    this.data.carSpeed += 0.01;
+                }
+            }
+        });
+    },
+    tick: function () {
+        var carVelocity = this.el.getAttribute("position");
 
-//         carVelocity.y += this.data.carSpeed;
+        carVelocity.x += this.data.carSpeed;
 
-//         this.el.setAttribute("rotation", {
-//             x: carVelocity.x,
-//             y: carVelocity.y,
-//             z: carVelocity.z,
-//         });
-//     }
-// });
+        this.el.setAttribute("position", {
+            x: carVelocity.x,
+            y: carVelocity.y,
+            z: carVelocity.z,
+        });
+    }
+});
