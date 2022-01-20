@@ -5,23 +5,29 @@
     <title>Racing Game</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="Control.js"></script>
+    <script src="Game.js"></script>
 </head>
 
 <body>
 
-<a-scene background="color: #00FFFF">
-    <a-entity id="camera" look-controls camera position="-0.1 -0.1 1.5" wasd-controls car-velocity-reader car-direction></a-entity>
+<a-scene background="color: green">
+    <a-entity id="camera" look-controls camera position="-0.1 -0.1 21.5" wasd-controls car-velocity-reader car-direction></a-entity>
 
     <a-assets>
         <a-asset-item id="car" src="./assetsl/Models/GLTF format/raceCarGreen.glb"></a-asset-item>
     </a-assets>
 
-    <a-entity id="CAR" gltf-model="#car" position="-0.4 -1 0" rotation="0 180 0" scale="1 1 1" car-velocity-reader car-direction></a-entity>
+    <a-entity id="CAR" gltf-model="#car" position="-0.4 -1 20" rotation="0 180 0" scale="1 1 1" car-velocity-reader car-direction game-play></a-entity>
 
     <a-assets>
         <a-asset-item id="city" src="./assetsl/Models/GLTF format/roadStraight.glb"></a-asset-item>
         <a-asset-item id="fence" src="./assetsl/Models/GLTF format/fenceStraight.glb"></a-asset-item>
         <a-asset-item id="start" src="./assetsl/Models/GLTF format/roadStart.glb"></a-asset-item>
+        <a-asset-item id="roadDivision" src="./assetsl/Models/GLTF format/roadSplit.glb"></a-asset-item>
+        <a-asset-item id="stand" src="./assetsl/Models/GLTF format/grandStand.glb"></a-asset-item>
+        <a-asset-item id="tent" src="./assetsl/Models/GLTF format/tentLong.glb"></a-asset-item>
+        <a-asset-item id="pitstop" src="./assetsl/Models/GLTF format/pitsGarageClosed.glb"></a-asset-item>
+        <a-asset-item id="pit" src="./assetsl/Models/GLTF format/pitsGarage.glb"></a-asset-item>
     </a-assets>
 
     <a-entity id="Start" gltf-model="#start" rotation="0 0 0" position="-1.05 -1.2 1.5 "scale="5 5 5"></a-entity>
@@ -62,7 +68,70 @@
     <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 6.5 "scale="5 5 5"></a-entity>
     <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 11.5 "scale="5 5 5"></a-entity>
     <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 11.5 "scale="5 5 5"></a-entity>
+    <a-entity id="roadDivision" gltf-model="#roadDivision" rotation="0 0 0" position="-0.3 -1.15 -86.5"scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-5.29 -1.2 -96.5 "scale="5. 5.1 5.1" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-5.29 -1.2 -100.5 "scale="5. 5.1 5.1" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-5.29 -1.2 -104.5 "scale="5. 5.1 5.1" ></a-entity>
+    <a-entity id="Start" gltf-model="#pit" rotation="0 90 0" position="1.2 -1.2 16 "scale="5 5 5"></a-entity>
+    <a-entity id="Start" gltf-model="#pit" rotation="0 90 0" position="1.2 -1.2 21 "scale="5 5 5"></a-entity>
+    <a-entity id="Start" gltf-model="#pit" rotation="0 270 0" position="-0.4 -1.2 15 "scale="5 5 5"></a-entity>
+    <a-entity id="Start" gltf-model="#pit" rotation="0 270 0" position="-0.4 -1.2 20 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 0 0" position="-0.3 -1.2 26.5 "scale="5 5 5"></a-entity>
+    <a-entity id="stand " gltf-model="#stand" rotation="0 270 0" position="-0.5 -1.2 -15 "scale="5 5 5"></a-entity>
+    <a-entity id="stand " gltf-model="#stand" rotation="0 90 0" position="1.1 -1.2 -13.5 "scale="5 5 5"></a-entity>
+    <a-entity id="stand " gltf-model="#stand" rotation="0 270 0" position="-0.5 -1.2 -20 "scale="5 5 5"></a-entity>
+    <a-entity id="stand " gltf-model="#stand" rotation="0 90 0" position="1.1 -1.2 -18.5 "scale="5 5 5"></a-entity>
+    <a-entity id="stand " gltf-model="#stand" rotation="0 270 0" position="-0.5 -1.2 -25 "scale="5 5 5"></a-entity>
+    <a-entity id="stand " gltf-model="#stand" rotation="0 90 0" position="1.1 -1.2 -23.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 -28.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 -28.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="6.5 -1.2 -33.5 "scale="5 5 5"></a-entity>
+    <a-entity id="fence" gltf-model="#fence" rotation="0 90 0" position="1.1 -1.2 -33.5 "scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5.29 -1.2 -96.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5.29 -1.2 -100.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5.29 -1.2 -104.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="tent" gltf-model="#tent" rotation="0 90 0" position="6.4 -1.2 -104.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="tent" gltf-model="#tent" rotation="0 90 0" position="6.4 -1.2 -108.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-5.29 -1.2 -108.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="-5.29 -1.2 -112.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5.29 -1.2 -108.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="5.29 -1.2 -112.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="roadDivision" gltf-model="#roadDivision" rotation="0 180 0" position="1.5 -1.15 -132.5"scale="5 5 5"></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="0 -1.2 -125.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="0 -1.2 -129.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="0 -1.2 -133.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="city" gltf-model="#city" rotation="0 0 0" position="0 -1.2 -137.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="pitstop" gltf-model="#pitstop" rotation="0 90 0" position="1.5 -1.2 -130.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="pitstop" gltf-model="#pitstop" rotation="0 90 0" position="1.5 -1.2 -134.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="pitstop" gltf-model="#pitstop" rotation="0 -90 0" position="0 -1.2 -134.5 "scale="5 5 5" ></a-entity>
+    <a-entity id="pitstop" gltf-model="#pitstop" rotation="0 -90 0" position="0 -1.2 -130.5 "scale="5 5 5" ></a-entity>
 
+
+    <a-entity
+        id="game_over_text"
+        position="0 7.5 10"
+        text="font: exo2bold; align: center; width: 100; color: white;value: Nice Driving!!!"
+        visible="false"
+        car-velocity-reader car-direction
+    ></a-entity>
+
+    <a-entity position="-23.5 19.3 0">
+        <a-entity
+            position="23.5 -18.5 20"
+            text="font: aileronsemibold; width: 12; color: black; value: TIME\nREMAINING"
+            visible="true"
+            scale="0.1 0.1 0.1"
+            car-velocity-reader car-direction
+        ></a-entity>
+        <a-entity
+            id="timer"
+            position="23.5 -18.5 20"
+            text="font: exo2bold; align: center; width: 30; color: black; value: 00:00"
+            visible="true"
+            scale="0.1 0.1 0.1"
+            car-velocity-reader car-direction
+        ></a-entity>
+    </a-entity>
 </body>
 
 </html>

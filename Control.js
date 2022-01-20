@@ -88,5 +88,5 @@ AFRAME.registerComponent("car-direction", {
             y: carVelocity.y,
             z: carVelocity.z,
         });
-    }
+    },
 });
